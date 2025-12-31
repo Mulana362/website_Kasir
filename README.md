@@ -1,59 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Kasir Serba-Serbi Banten (Web POS)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi **website kasir (Point of Sale)** untuk toko “Serba-Serbi Banten”.  
+Mendukung login **Admin**, pengelolaan produk, transaksi penjualan, dan laporan.
 
-## About Laravel
+## Fitur
+- Login Admin
+- Manajemen Produk (CRUD)
+- Manajemen Stok
+- Transaksi Penjualan (POS) + riwayat transaksi
+- Laporan penjualan (ringkasan)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tech Stack
+- Laravel (PHP)
+- MySQL / MariaDB
+- HTML/CSS/Bootstrap
+- Git & GitHub
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## halaman login
+![Halaman Login](https://github.com/user-attachments/assets/a7428c62-2ce0-492b-a505-68e2c263c057)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Fitur pada halaman POS:
+- Pilih produk + auto tampil harga
+- Input Qty + hitung subtotal & total otomatis
+- Uang bayar & hitung kembalian
+- Simpan transaksi + riwayat/laporan penjualan
 
-## Learning Laravel
+ ### 2) Halaman Kasir (POS)
+![Halaman Kasir](https://github.com/user-attachments/assets/6f5e5b08-be7c-4e24-bc0e-1e984ccb0c9d)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Fitur laporan:
+- Filter tanggal (Dari–Sampai)
+- Ringkasan KPI: Omzet, Benefit/Profit, Margin, Jumlah transaksi
+- Export laporan ke CSV
+- Download laporan PDF
+- Detail transaksi per invoice
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3) Laporan Penjualan
+![Laporan Penjualan](https://github.com/user-attachments/assets/4909c5a0-580d-47f7-896f-21abcf2b6dee)
 
-## Laravel Sponsors
+## Cara Menjalankan (Local)
+1. Clone
+```bash
+git clone https://github.com/Mulana362/website_Kasir.git
+cd website_Kasir
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Install & setup
+composer install
+cp .env.example .env
+php artisan key:generate
 
-### Premium Partners
+3.jalankan
+php artisan migrate --seed
+php artisan serve
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Akun Demo
+> Password tidak ditampilkan.(Role yang tersedia: Admin)
+- Admin: admin@example.com
+ 
+## Catatan
+Project ini dibuat sebagai latihan/penerapan konsep POS & reporting menggunakan Laravel + MySQL.
+AI digunakan untuk brainstorming/debugging, sedangkan implementasi & pengujian dilakukan sendiri.
